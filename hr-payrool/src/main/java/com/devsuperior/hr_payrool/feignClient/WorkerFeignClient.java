@@ -1,6 +1,7 @@
 package com.devsuperior.hr_payrool.feignClient;
 
 import com.devsuperior.hr_payrool.model.Worker;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import java.util.Optional;
 
 @Component
-@FeignClient(name = "hr-worker", url = "localhost:8001", path = "/worker")
+@FeignClient(name = "hr-worker", path = "/worker")
 public interface WorkerFeignClient {
 
     @ResponseStatus(HttpStatus.OK)
